@@ -1,95 +1,46 @@
-var gaugeTemp = new LinearGauge({
-    renderTo: 'gauge-temperature',
-    width: 120,
-    height: 400,
-    units: "Temperature C",
-    minValue: 5,
-    startAngle: 90,
-    ticksAngle: 180,
-    maxValue: 40,
-    colorValueBoxRect: "#049faa",
-    colorValueBoxRectEnd: "#049faa",
-    colorValueBoxBackground: "#f1fbfc",
-    valueDec: 2,
-    valueInt: 2,
-    majorTicks: [
-        "0",
-        "5",
-        "10",
-        "15",
-        "20",
-        "25",
-        "30",
-        "35",
-        "40"
-    ],
-    minorTicks: 4,
-    strokeTicks: true,
-    highlights: [
-        {
-            "from": 30,
-            "to": 40,
-            "color": "rgba(200, 50, 50, .75)"
-        }
-    ],
-    colorPlate: "#fff",
-    colorBarProgress: "#CC2936",
-    colorBarProgressEnd: "#049faa",
-    borderShadowWidth: 0,
-    borders: false,
-    needleType: "arrow",
-    needleWidth: 2,
-    needleCircleSize: 7,
-    needleCircleOuter: true,
-    needleCircleInner: false,
-    animationDuration: 1500,
-    animationRule: "linear",
-    barWidth: 10,
-  }).draw();
-    
-  var gaugeHum = new RadialGauge({
-    renderTo: 'gauge-humidity',
-    width: 300,
-    height: 300,
-    units: "Luminosity",
-    minValue: 0,
-    maxValue: 100,
-    colorValueBoxRect: "#049faa",
-    colorValueBoxRectEnd: "#049faa",
-    colorValueBoxBackground: "#f1fbfc",
-    valueInt: 2,
-    majorTicks: [
-        "0",
-        "20",
-        "40",
-        "60",
-        "80",
-        "100"
-  
-    ],
-    minorTicks: 4,
-    strokeTicks: true,
-    highlights: [
-        {
-            "from": 80,
-            "to": 100,
-            "color": "#03C0C1"
-        }
-    ],
-    colorPlate: "#fff",
-    borderShadowWidth: 0,
-    borders: false,
-    needleType: "line",
-    colorNeedle: "#007F80",
-    colorNeedleEnd: "#007F80",
-    needleWidth: 2,
-    needleCircleSize: 3,
-    colorNeedleCircleOuter: "#007F80",
-    needleCircleOuter: true,
-    needleCircleInner: false,
-    animationDuration: 1500,
-    animationRule: "linear"
-  }).draw();
+document.addEventListener("DOMContentLoaded", function () {
+  // Sample data
+  const data = [10, 25, 18, 32, 24, 40, 30];
+
+  // Get the canvas element and its context
+  const canvas = document.getElementById("lineChart");
+  const ctx = canvas.getContext("2d");
+
+  // Set the canvas size
+  canvas.width = 600;
+  canvas.height = 400;
+
+  // Draw the line chart
+  drawLineChart(ctx, data);
+});
+
+function drawLineChart(ctx, data) {
+  const canvasWidth = ctx.canvas.width;
+  const canvasHeight = ctx.canvas.height;
+
+  // Calculate the maximum value in the data array
+  const maxDataValue = Math.max(...data);
+
+  // Calculate the width and height of each bar
+  const barWidth = canvasWidth / (data.length - 1);
+  const scaleFactor = canvasHeight / maxDataValue;
+
+  // Draw the line chart
+  ctx.beginPath();
+  ctx.moveTo(0, canvasHeight - data[0] * scaleFactor);
+
+  for (let i = 1; i < data.length; i++) {
+      ctx.lineTo(i * barWidth, canvasHeight - data[i] * scaleFactor);
+  }
+
+  // Style the line
+  ctx.strokeStyle = "#3498db";
+  ctx.lineWidth = 2;
+
+  // Draw the line
+  ctx.stroke();
+}
+
     
 const socket = io();
 

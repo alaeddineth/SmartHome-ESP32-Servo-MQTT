@@ -11,25 +11,15 @@
 </head>
 <body>
   <h1>ESP32 Data</h1>
-  <h1>value received from the mqtt </h1>
   <div id="resistanceValue"> </div>
 
-  <div class="topnav">
-    <h1>ESP WEB SERVER GAUGES</h1>
-  </div>
-  <div class="content">
-    <div class="card-grid">
-      <div class="card">
-        <p class="card-title">Temperature</p>
-        <canvas id="gauge-temperature"></canvas>
-      </div>
-      <div class="card">
-        <p class="card-title">Luminosity</p>
-        <canvas id="gauge-humidity"></canvas>
-      </div>
-    </div>
-  </div>
 
+    <div class="chart-container">
+        <canvas id="lineChart"></canvas>
+    </div>
+</body>
+ 
+  
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
   <script src="app.js"></script>
