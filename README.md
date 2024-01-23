@@ -1,78 +1,33 @@
-uct Name
-> Short blurb about what your product does.
+# ESP32 MQTT Servo Control
 
-[![NPM Version][npm-image]][npm-url]
-[![Build Status][travis-image]][travis-url]
-[![Downloads Stats][npm-downloads]][npm-url]
+## Project Overview
 
-One to two paragraph statement about your product and what it does.
+This project enables communication between an ESP32, a client dashboard, and a servo motor for controlling a volet roulant (rolling shutter). Real-time data is sent to an MQTT broker via Wi-Fi, and the data is displayed in real-time on the dashboard.
 
-![](header.png)
+## Table of Contents
 
-## Installation
+- [Dependencies](#dependencies)
+- [Setup and Installation](#setup-and-installation)
+- [Usage](#usage)
+- [MQTT Broker Configuration](#mqtt-broker-configuration)
+- [Contributing](#contributing)
+- [License](#license)
 
-OS X & Linux:
+## Dependencies
 
-```sh
-npm install my-crazy-module --save
-```
+- [Arduino IDE](https://www.arduino.cc/en/software)
+- [Library Name and Version](Link to the library documentation)
 
-Windows:
+## Setup and Installation
 
-```sh
-edit autoexec.bat
-```
+1. Clone this repository:
 
-## Usage example
+   ```bash
+   git clone https://github.com/your-username/esp32-mqtt-servo-control.git
 
-A few motivating and useful examples of how your product can be used. Spice this up with code blocks and potentially more screenshots.
+2. Open the Arduino IDE and load the sketch located in the src folder.
 
-_For more examples and usage, please refer to the [Wiki][wiki]._
+3.Install the required libraries using the Arduino Library Manager.
 
-## Development setup
+4.Upload the sketch to your ESP32.
 
-Describe how to install all development dependencies and how to run an automated test-suite of some kind. Potentially do this for multiple platforms.
-
-```sh
-make install
-npm test
-```
-
-## Release History
-
-* 0.2.1
-    * CHANGE: Update docs (module code remains unchanged)
-* 0.2.0
-    * CHANGE: Remove `setDefaultXYZ()`
-    * ADD: Add `init()`
-* 0.1.1
-    * FIX: Crash when calling `baz()` (Thanks @GenerousContributorName!)
-* 0.1.0
-    * The first proper release
-    * CHANGE: Rename `foo()` to `bar()`
-* 0.0.1
-    * Work in progress
-
-## Meta
-
- – theljanialaeddine@gmail.com
-
-Distributed under the XYZ license. See ``LICENSE`` for more information.
-
-[https://github.com/alaeddineth/SmartHome-ESP32-Servo-MQTT]
-
-## Contributing
-
-1. Fork it (<https://github.com/yourname/yourproject/fork>)
-2. Create your feature branch (`git checkout -b feature/fooBar`)
-3. Commit your changes (`git commit -am 'Add some fooBar'`)
-4. Push to the branch (`git push origin feature/fooBar`)
-5. Create a new Pull Request
-
-<!-- Markdown link & img dfn's -->
-[npm-image]: https://img.shields.io/npm/v/datadog-metrics.svg?style=flat-square
-[npm-url]: https://npmjs.org/package/datadog-metrics
-[npm-downloads]: https://img.shields.io/npm/dm/datadog-metrics.svg?style=flat-square
-[travis-image]: https://img.shields.io/travis/dbader/node-datadog-metrics/master.svg?style=flat-square
-[travis-url]: https://travis-ci.org/dbader/node-datadog-metrics
-[wiki]: https://github.com/yourname/yourproject/wiki
