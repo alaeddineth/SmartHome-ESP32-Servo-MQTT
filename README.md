@@ -3,6 +3,7 @@
 ## Project Overview
 
 This project enables communication between an ESP32, a client dashboard, and a servo motor for controlling a volet roulant (rolling shutter). Real-time data is sent to an MQTT broker via Wi-Fi, and the data is displayed in real-time on the dashboard.
+![Dashboard](https://github.com/alaeddineth/SmartHome-ESP32-Servo-MQTT/assets/50785652/4f135025-056f-4ffd-b2ed-5d2fcac2332d)
 
 ## Table of Contents
 
